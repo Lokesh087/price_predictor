@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 PricePilot AI
+# 🚀 PricePredictor AI
 ### Intelligent Product Price Prediction System
 
 *An end-to-end Machine Learning pipeline that predicts e-commerce product prices — from raw data to a live API.*

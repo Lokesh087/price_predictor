@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+saved_models/
+dataset/processed/
+dataset/final/
+.vscode/
+.idea/

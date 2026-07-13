@@ -39,7 +39,7 @@
 
 ## 📌 Project Overview
 
-**PricePilot AI** is an end-to-end Machine Learning application developed for the **Infosys Springboard Internship**.
+**PricePredictor AI** is an end-to-end Machine Learning application developed for the **Infosys Springboard Internship**.
 
 The project predicts the selling price of an e-commerce product using product specifications, shipping details, and purchase information. It covers the full ML lifecycle — preprocessing, feature engineering, model training, evaluation, visualization, and API deployment via **FastAPI**.
 
@@ -215,8 +215,8 @@ Automatically generated for model analysis:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/PricePilot-AI.git
-cd PricePilot-AI
+git clone https://github.com/yourusername/PricePredictor-AI.git
+cd PricePredictor-AI
 ```
 
 ### 2️⃣ Install Dependencies

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 PricePredictor AI
+# 🚀 PricePilot AI
 ### Intelligent Product Price Prediction System
 
 *An end-to-end Machine Learning pipeline that predicts e-commerce product prices — from raw data to a live API.*
@@ -215,8 +215,8 @@ Automatically generated for model analysis:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/PricePredictor-AI.git
-cd PricePredictor-AI
+git clone https://github.com/Lokesh087/price_predictor.git
+cd price_predictor
 ```
 
 ### 2️⃣ Install Dependencies
@@ -273,6 +273,31 @@ metrics.txt
 model_results.csv
 graphs/
 ```
+
+---
+
+
+## 🌐 Interactive Web App & Deployment
+
+The repository now includes a responsive browser-based estimator at `index.html`, served by the FastAPI application. It loads product categories from the fitted encoder and sends validated product attributes to the XGBoost prediction endpoint.
+
+### Run locally
+
+```bash
+pip install -r requirements.txt
+python train_deploy_model.py
+uvicorn api.app:app --reload
+```
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000) for the UI and [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) for API documentation. The training script rebuilds the processed Olist dataset and creates the model artifacts required by the API.
+
+### Deploy on Render
+
+Use the included `render.yaml` Blueprint. Render installs the dependencies, runs the complete preprocessing and XGBoost training pipeline during build, then starts the FastAPI service. Health check: `/health`.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Lokesh087/price_predictor)
+
+**Important:** The model is trained from the repository's Olist source datasets during deployment. First deployment can take several minutes. The estimator returns prices in Brazilian Real (BRL), matching the source dataset.
 
 ---
 

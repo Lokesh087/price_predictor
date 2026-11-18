@@ -1,38 +1,19 @@
-from pydantic import BaseModel
-
-
+from pydantic import BaseModel, Field
 class PricePredictionRequest(BaseModel):
-
-    product_category_name: int
-
-    freight_value: float
-
-    product_weight_g: float
-
-    product_length_cm: float
-
-    product_height_cm: float
-
-    product_width_cm: float
-
-    purchase_month: int
-
-    purchase_day: int
-
-    purchase_hour: int
-
-    purchase_weekday: int
-
-    purchase_quarter: int
-
-    is_weekend: int
-
-    delivery_days: int
-
-    estimated_delivery_days: int
-
-    delivery_difference: int
-
-    product_volume: float
-
-    product_density: float
+ product_category_name:int=Field(ge=0)
+ freight_value:float=Field(ge=0,le=10000)
+ product_weight_g:float=Field(gt=0,le=100000)
+ product_length_cm:float=Field(gt=0,le=300)
+ product_height_cm:float=Field(gt=0,le=300)
+ product_width_cm:float=Field(gt=0,le=300)
+ purchase_month:int=Field(ge=1,le=12,default=6)
+ purchase_day:int=Field(ge=1,le=31,default=15)
+ purchase_hour:int=Field(ge=0,le=23,default=12)
+ purchase_weekday:int=Field(ge=0,le=6,default=2)
+ purchase_quarter:int=Field(ge=1,le=4,default=2)
+ is_weekend:int=Field(ge=0,le=1,default=0)
+ delivery_days:int=Field(ge=0,le=90,default=12)
+ estimated_delivery_days:int=Field(ge=0,le=120,default=20)
+ delivery_difference:int=Field(ge=-120,le=120,default=8)
+ product_volume:float=Field(gt=0)
+ product_density:float=Field(ge=0)

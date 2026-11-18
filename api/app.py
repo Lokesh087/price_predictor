@@ -13,7 +13,7 @@ def dashboard(): return FileResponse(ROOT/"index.html")
 @app.get("/health")
 def health(): return {"status":"ok","model":"XGBoost","features":len(feature_columns)}
 @app.get("/metadata")
-def metadata(): return {"categories":sorted(str(x) for x in category_encoder.classes_),"currency":"BRL"}
+def metadata(): return {"categories":[str(x) for x in category_encoder.classes_],"currency":"BRL"}
 @app.post("/predict-price")
 def predict(request:PricePredictionRequest):
  try: return {"predicted_price":round(predict_price(request.model_dump()),2),"currency":"BRL","model":"XGBoost"}

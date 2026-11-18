@@ -6,6 +6,7 @@ class PricePredictionRequest(BaseModel):
  product_length_cm:float=Field(gt=0,le=300)
  product_height_cm:float=Field(gt=0,le=300)
  product_width_cm:float=Field(gt=0,le=300)
+ purchase_year:int=Field(ge=2016,le=2030,default=2018)
  purchase_month:int=Field(ge=1,le=12,default=6)
  purchase_day:int=Field(ge=1,le=31,default=15)
  purchase_hour:int=Field(ge=0,le=23,default=12)
